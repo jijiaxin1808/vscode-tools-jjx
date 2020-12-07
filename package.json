@@ -2,11 +2,11 @@
 	"name": "jjxTools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.1",
-	"publisher": "vscode-samples",
-	"repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-sample",
+	"version": "0.0.2",
+	"publisher": "jijiaxin",
+	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
-		"vscode": "^1.34.0"
+		"vscode": "^1.51.0"
 	},
 	"categories": [
 		"Other"
@@ -17,14 +17,14 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"menus": {
-      "editor/context": [
-        {
-          "command": "jjxTools.openFile",
-          "alt": "jjxTools.openFile",
+			"editor/context": [
+				{
+					"command": "jjxTools.openFile",
+					"alt": "jjxTools.openFile",
 					"group": "z_commands "
-        }
+				}
 			]
-    },
+		},
 		"commands": [
 			{
 				"command": "jjxTools.openFile",
@@ -32,6 +32,7 @@
 			}
 		]
 	},
+	"icon": "icon.jpg",
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",

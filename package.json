@@ -1,0 +1,49 @@
+{
+	"name": "jjxTools",
+	"displayName": "@jjxTools",
+	"description": "tools just for @jjx",
+	"version": "0.0.1",
+	"publisher": "vscode-samples",
+	"repository": "https://github.com/Microsoft/vscode-extension-samples/helloworld-sample",
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:jjxTools.openFile"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"menus": {
+      "editor/context": [
+        {
+          "command": "jjxTools.openFile",
+          "alt": "jjxTools.openFile",
+					"group": "z_commands "
+        }
+			]
+    },
+		"commands": [
+			{
+				"command": "jjxTools.openFile",
+				"title": "在新的vscode窗口打开当前文件"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.51.0",
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"typescript": "^4.0.2"
+	}
+}

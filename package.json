@@ -39,7 +39,7 @@
 			}
 		]
 	},
-	"icon": "icon.jpg",
+	"icon": "icon.ico",
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",

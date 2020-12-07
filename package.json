@@ -2,7 +2,7 @@
 	"name": "jjxTools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -16,6 +16,13 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"keybindings": [
+      {
+        "command": "jjxTools.openFile",
+        "key": "ctrl+alt+o",
+        "mac": "ctrl+cmd+o"
+      }
+    ],
 		"menus": {
 			"editor/context": [
 				{

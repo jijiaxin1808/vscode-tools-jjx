@@ -5,7 +5,10 @@ import { GitExtension } from './git';
 
 export async function easycommit () {
     const git = getGitExtesion();
-    if(!git) return;
+    if(!git) {
+        vscode.window.showErrorMessage('git插件未加载或还在加载中');
+        return;
+    }
     const length = commitItems.length;
     let commitMsg = ''; 
     for(let i = 0; i < length; i++) {
@@ -15,7 +18,6 @@ export async function easycommit () {
         case 'undefined': {
             // 这里对undeined情况进行处理
             return null;
-            break;
         }
         case 'string':  {
             commitMsg += currItem.nextLine? '\n' : '';
@@ -28,10 +30,25 @@ export async function easycommit () {
         }
         }
     }
-    git.repositories.forEach(resposity => {
-        resposity.inputBox.value = commitMsg;
-    });
-    vscode.commands.executeCommand('workbench.view.scm');
+    try {
+        vscode.window.withProgress({
+            location: vscode.ProgressLocation.Notification,
+            title: "正在comit",
+            cancellable: true
+        }, async progress => {
+            progress.report({ increment: 0 });
+            for(const repository of git.repositories) {
+                await repository.commit(commitMsg);
+            }
+            progress.report({ increment: 100 });
+            return new Promise(reslove=>{
+                vscode.window.showInformationMessage('commit 成功');
+                reslove(null);
+            });
+        });
+    } catch(e) {
+        vscode.window.showErrorMessage(e);
+    }
 }
 
 async function createCommitInput<T extends vscode.QuickPickItem>(commitItem: commitType<T>): Promise<T | undefined | string>  {

@@ -2,7 +2,7 @@
 	"name": "jjxTools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -12,7 +12,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:jjxTools.openFile"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -36,6 +36,10 @@
 			{
 				"command": "jjxTools.openFile",
 				"title": "在新的vscode窗口打开当前文件"
+			},
+			{
+				"command": "jjxTools.easycommit",
+				"title": "easy commit"
 			}
 		]
 	},

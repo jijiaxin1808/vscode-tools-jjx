@@ -1,7 +1,11 @@
 import * as vscode from 'vscode';
-import  {  isPickType, commitItemType, commitType } from './type';
+import  {   commitItemType, commitType, pickType, inputType } from './type';
 import { commitItems } from './commitItem';
 import { GitExtension } from './git';
+
+function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is pickType<T>{
+    return commitItem.type == 'picker';
+} 
 
 export async function easycommit () {
     const git = getGitExtesion();

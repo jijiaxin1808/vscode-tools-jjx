@@ -19,10 +19,3 @@ export type inputType = {
 }
 
 export type commitType<T extends vscode.QuickPickItem> = pickType<T> | inputType
-
-export function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is pickType<T>{
-    return commitItem.type == 'picker';
-} 
-export function isInputType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is inputType{
-    return commitItem.type == 'input';
-}

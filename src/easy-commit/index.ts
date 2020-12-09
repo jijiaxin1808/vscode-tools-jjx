@@ -74,6 +74,8 @@ async function createCommitInput<T extends vscode.QuickPickItem>(commitItem: com
 function validateEmpty(str: string) {
     if(str === '') {
         return 'this is required';
+    } if(str.length >50) {
+        return 'less then 50 char';
     } else return null;
 }
 

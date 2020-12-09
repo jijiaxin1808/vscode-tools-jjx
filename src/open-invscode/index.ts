@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
-
-export function openFIleWithvscode() {
+export function openCurrtFIleWithvscode() {
     return new Promise(() => {
         const currtFileName = <string>vscode.window.activeTextEditor?.document.fileName;
         console.log(currtFileName);
@@ -9,4 +8,7 @@ export function openFIleWithvscode() {
     }).catch(error => {
         vscode.window.showErrorMessage(error.toString());
     });
+}
+export function openWithVscode(uri: vscode.Uri) {
+    vscode.commands.executeCommand('vscode.openFolder', vscode.Uri.file(uri.fsPath), true );
 }

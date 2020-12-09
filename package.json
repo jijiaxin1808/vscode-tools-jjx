@@ -35,12 +35,23 @@
 					"alt": "jjxTools.openFile",
 					"group": "z_commands "
 				}
+			],
+			"explorer/context": [
+				{
+					"command": "jjxTools.openfolder",
+					"alt": "jjxTools.openfolder",
+					"group": "navigation"
+				}
 			]
 		},
 		"commands": [
 			{
 				"command": "jjxTools.openFile",
 				"title": "在新的vscode窗口打开当前文件"
+			},
+			{
+				"command": "jjxTools.openfolder",
+				"title": "打开文件夹"
 			},
 			{
 				"command": "jjxTools.easycommit",

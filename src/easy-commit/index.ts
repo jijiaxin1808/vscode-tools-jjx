@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
-import  {   commitItemType, commitType, pickType, inputType } from './type';
+import  {   commitItemType, commitType, pickType, repoItemType } from './type';
 import { commitItems } from './commitItem';
-import { GitExtension } from './git';
+import { GitExtension, Repository } from './git';
 
 function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is pickType<T>{
     return commitItem.type == 'picker';
@@ -13,11 +13,18 @@ export async function easycommit () {
         vscode.window.showErrorMessage('git插件未加载或还在加载中');
         return;
     }
+    let commitRepo: Repository;
+    if(git.repositories.length > 1) {
+        commitRepo = await creatSelectRepoItmes(git.repositories);
+    } else {
+        commitRepo = git.repositories[0];
+    }
     const length = commitItems.length;
     let commitMsg = ''; 
     for(let i = 0; i < length; i++) {
         const currItem = commitItems[i];
-        const item: commitItemType | string | undefined = await createCommitInput<commitItemType>(<commitType<commitItemType>>currItem);
+        const item: commitItemType | string | undefined | repoItemType = await createCommitInput<commitItemType>(<commitType<commitItemType>>currItem);
+        // TODO: 这里的类型要拿出来
         switch (typeof item) {
         case 'undefined': {
             // 这里对undeined情况进行处理
@@ -41,9 +48,7 @@ export async function easycommit () {
             cancellable: true
         }, async progress => {
             progress.report({ increment: 0 });
-            for(const repository of git.repositories) {
-                await repository.commit(commitMsg);
-            }
+            await commitRepo.commit(commitMsg);
             progress.report({ increment: 100 });
             return new Promise(reslove=>{
                 vscode.window.showInformationMessage('commit 成功');
@@ -55,7 +60,24 @@ export async function easycommit () {
     }
 }
 
-async function createCommitInput<T extends vscode.QuickPickItem>(commitItem: commitType<T>): Promise<T | undefined | string>  {
+async function creatSelectRepoItmes(repos: Repository[]): Promise<Repository> {
+    const selectRepoItems: pickType<repoItemType> =     {
+        type: 'picker',
+        nextLine: false,
+        placeholder: 'Select the repo of current commit',
+        item: [
+        ],
+    };
+    for(const repo of repos) {
+        selectRepoItems.item.push({
+            value: repo,
+            label: repo.rootUri.path
+        });
+    }
+    const item = await createCommitInput(selectRepoItems) as repoItemType;
+    return item.value;
+}
+async function createCommitInput<T extends vscode.QuickPickItem>(commitItem: commitType<T>): Promise<T | undefined | string | repoItemType>  {
     if(isPickType<T>(commitItem)) {
         return new Promise(reslove=> {
             const item: T[] = commitItem.item;

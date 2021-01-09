@@ -12,7 +12,7 @@ This is a js/ts Tools just for jjx
 
 
 easy-commit待完成功能
-1. 暂存区没有文件给报错提示
+1. 暂存区没有文件给报错提示 done
 2. 如果commit时hook里了lint之类的怎么处理???
 3. 多个repo时可以选择repo进行commit done
 4.  commit参数的的config化

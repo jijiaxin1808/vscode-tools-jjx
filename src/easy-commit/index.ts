@@ -10,7 +10,7 @@ function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) :
 export async function easycommit () {
     const git = getGitExtesion();
     if(!git) {
-        vscode.window.showErrorMessage('git插件未加载或还在加载中');
+        vscode.window.showErrorMessage('vscode-git插件未加载或还在加载中');
         return;
     }
     let commitRepo: Repository;
@@ -18,6 +18,10 @@ export async function easycommit () {
         commitRepo = await creatSelectRepoItmes(git.repositories);
     } else {
         commitRepo = git.repositories[0];
+    }
+    if(!commitRepo.state.indexChanges.length) {
+        vscode.window.showErrorMessage('当前repo还没有暂存文件');
+        return null;
     }
     const length = commitItems.length;
     let commitMsg = ''; 

@@ -1,50 +1,11 @@
-import { commitItemType, commitType } from './type';
+import { commitItemType, commitType, pickType } from './type';
+import { getExtConfig } from '../utils/index';
 export const commitItems: commitType<commitItemType>[] = [
     {
         type: 'picker',
         nextLine: false,
         placeholder: 'Select the type of change that you\'re committing:',
-        item: [{
-            label: 'feat',
-            value: 'feat: ',
-            description: 'A new feature'
-        }, {
-            label: 'fix',
-            value: 'fix: ',
-            description: 'A bug fix'
-        }, {
-            label: 'docs',
-            value: 'docs: ',
-            description: 'Documentation only changes'
-        }, {
-            label: 'style',
-            value: 'style: ',
-            description: 'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'
-        }, {
-            label: 'refactor',
-            value: 'refactor: ',
-            description: 'A code change that neither fixes a bug nor adds a feature'
-        }, {
-            label: 'perf',
-            value: 'perf: ',
-            description: 'A code change that improves performance'
-        }, {
-            label: 'test',
-            value: 'test: ',
-            description: 'Adding missing tests or correcting existing tests'
-        }, {
-            label: 'build',
-            value: 'build: ',
-            description: 'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)'
-        }, {
-            label: 'chore',
-            value: 'chore: ',
-            description: 'Other changes that don\'t modify src or test files'
-        }, {
-            label: 'revert',
-            value: 'revert: ',
-            description: 'Reverts a previous commit'
-        }
+        item: [
         ],
     },
     {
@@ -78,3 +39,9 @@ export const commitItems: commitType<commitItemType>[] = [
         }]
     }
 ];
+
+export function getCommitItems() {
+    const items = getExtConfig().get('commitItems');
+    (commitItems[0] as pickType<commitItemType>).item = items as commitItemType[];
+    return commitItems;
+}

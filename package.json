@@ -2,7 +2,7 @@
 	"name": "jjxTools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -16,6 +16,57 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "tools@jjx",
+			"properties": {
+				"Jtools.commitItems": {
+					"type": "array",
+					"default": [{
+            "label": "feat",
+            "value": "feat: ",
+            "description": "A new feature"
+        }, {
+            "label": "fix",
+            "value": "fix: ",
+            "description": "A bug fix"
+        }, {
+            "label": "docs",
+            "value": "docs: ",
+            "description": "Documentation only changes"
+        }, {
+            "label": "style",
+            "value": "style: ",
+            "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+        }, {
+            "label": "refactor",
+            "value": "refactor: ",
+            "description": "A code change that neither fixes a bug nor adds a feature"
+        }, {
+            "label": "perf",
+            "value": "perf: ",
+            "description": "A code change that improves performance"
+        }, {
+            "label": "test",
+            "value": "test: ",
+            "description": "Adding missing tests or correcting existing tests"
+        }, {
+            "label": "build",
+            "value": "build: ",
+            "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+        }, {
+            "label": "chore",
+            "value": "chore: ",
+            "description": "Other changes that don\"t modify src or test files"
+        }, {
+            "label": "revert",
+            "value": "revert: ",
+            "description": "Reverts a previous commit"
+        }
+        ],
+					"description": "commitItems的选项配置"
+				}
+			}
+		},
 		"keybindings": [
       {
         "command": "jjxTools.openFile",

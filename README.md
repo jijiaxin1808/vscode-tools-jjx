@@ -10,12 +10,11 @@ This is a js/ts Tools just for jjx
 |完成 | 在exploer时可以右键选择一个文件夹/文件 在一个新的vscode窗口打开 | undefined |
 | 完成 | 在js/ts文件中输入了reg后可以选择一些常用正则插入到代码中 |  undefined |
 | 待续 | 根据js/ts中的函数参数列表, 自动生成函数注释 |  ctrl + alt + d |
-| 待续 | 给插件的每个功能设置一个开关页面, 选择某项功能是否打开 |  undefined |
+| failed | 给插件的每个功能设置一个开关页面, 选择某项功能是否打开(搁浅, 因为很多命令绑定在package.json文件里了, 没法去动态改变) |  undefined |
 
 
 easy-commit待完成功能
 1. 暂存区没有文件给报错提示 done
-2. 如果commit时hook里了lint之类的怎么处理???
+2. 如何获取commit得到的msg? 好像拿不到对应的msg输出 failed
 3. 多个repo时可以选择repo进行commit done
-4.  commit参数的的config化
-5. 如何获取commit得到的msg?
+4.  commit参数的的config化 done

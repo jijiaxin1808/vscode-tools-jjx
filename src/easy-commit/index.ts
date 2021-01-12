@@ -1,15 +1,21 @@
 import * as vscode from 'vscode';
 import  {   commitItemType, commitType, pickType, repoItemType } from './type';
-import { commitItems } from './commitItem';
+import { getCommitItems } from './commitItem';
 import { GitExtension, Repository } from './git';
+
+const commitItems = getCommitItems();
 
 function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is pickType<T>{
     return commitItem.type == 'picker';
 } 
 
 export async function easycommit () {
-    const git = getGitExtesion();
-    if(!git) {
+    let git;
+    try {
+        git = getGitExtesion();
+        if(!git) throw new Error();
+    }
+    catch (e) {
         vscode.window.showErrorMessage('vscode-git插件未加载或还在加载中');
         return;
     }

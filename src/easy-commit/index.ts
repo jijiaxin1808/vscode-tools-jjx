@@ -42,7 +42,11 @@ export async function easycommit () {
         }
         case 'string':  {
             commitMsg += currItem.nextLine? '\n' : '';
-            commitMsg += item;
+            if (currItem.fomatter) {
+                commitMsg += currItem.fomatter(item);
+            } else {
+                commitMsg += item;
+            }
             break;
         }
         default: {
@@ -57,6 +61,7 @@ export async function easycommit () {
             title: "正在comit",
             cancellable: true
         }, async progress => {
+            console.log({commitMsg});
             progress.report({ increment: 0 });
             await commitRepo.commit(commitMsg);
             progress.report({ increment: 100 });

@@ -1,6 +1,6 @@
 {
   "name": "@jjxtools/extension",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "潘神1808 <44405174+jijiaxin1808@users.noreply.github.com>",
   "homepage": "https://github.com/jijiaxin1808/vscode-tools-jjx#readme",
@@ -29,6 +29,6 @@
   "dependencies": {
     "@jjxtools/easy-commit": "^1.0.0",
     "@jjxtools/open-invscode": "^1.0.0",
-    "@jjxtools/utils": "^0.0.0"
+    "@jjxtools/utils": "^1.0.0"
   }
 }

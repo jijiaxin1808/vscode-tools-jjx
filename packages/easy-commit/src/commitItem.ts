@@ -1,5 +1,5 @@
 import { commitItemType, commitType, pickType } from './type';
-import { getExtConfig } from '../utils/index';
+import { getExtConfig } from './utils/index';
 export const commitItems: commitType<commitItemType>[] = [
     {
         type: 'picker',

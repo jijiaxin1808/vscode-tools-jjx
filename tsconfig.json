@@ -6,8 +6,10 @@
 		"outDir": "out",
 		"sourceMap": true,
 		"strict": true,
-		"rootDir": "src",
 		"noImplicitThis": false
 	},
+  "include": [
+    "packages/*/src"
+  ],
 	"exclude": ["node_modules", ".vscode-test"]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "@jjxtools/easy-commit",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@types/vscode": "^1.52.0"
+  }
+}

@@ -1,8 +1,8 @@
 {
-	"name": "jjxTools",
+	"name": "jjxtools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -14,71 +14,85 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./out/extension.js",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"main": "./out/extension/src/index.js",
 	"contributes": {
 		"configuration": {
 			"title": "tools@jjx",
 			"properties": {
 				"Jtools.commitItems": {
 					"type": "array",
-					"default": [{
-            "label": "feat",
-            "value": "feat: ",
-            "description": "A new feature"
-        }, {
-            "label": "fix",
-            "value": "fix: ",
-            "description": "A bug fix"
-        }, {
-            "label": "docs",
-            "value": "docs: ",
-            "description": "Documentation only changes"
-        }, {
-            "label": "style",
-            "value": "style: ",
-            "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
-        }, {
-            "label": "refactor",
-            "value": "refactor: ",
-            "description": "A code change that neither fixes a bug nor adds a feature"
-        }, {
-            "label": "perf",
-            "value": "perf: ",
-            "description": "A code change that improves performance"
-        }, {
-            "label": "test",
-            "value": "test: ",
-            "description": "Adding missing tests or correcting existing tests"
-        }, {
-            "label": "build",
-            "value": "build: ",
-            "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
-        }, {
-            "label": "chore",
-            "value": "chore: ",
-            "description": "Other changes that don\"t modify src or test files"
-        }, {
-            "label": "revert",
-            "value": "revert: ",
-            "description": "Reverts a previous commit"
-        }
-        ],
+					"default": [
+						{
+							"label": "feat",
+							"value": "feat: ",
+							"description": "A new feature"
+						},
+						{
+							"label": "fix",
+							"value": "fix: ",
+							"description": "A bug fix"
+						},
+						{
+							"label": "docs",
+							"value": "docs: ",
+							"description": "Documentation only changes"
+						},
+						{
+							"label": "style",
+							"value": "style: ",
+							"description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+						},
+						{
+							"label": "refactor",
+							"value": "refactor: ",
+							"description": "A code change that neither fixes a bug nor adds a feature"
+						},
+						{
+							"label": "perf",
+							"value": "perf: ",
+							"description": "A code change that improves performance"
+						},
+						{
+							"label": "test",
+							"value": "test: ",
+							"description": "Adding missing tests or correcting existing tests"
+						},
+						{
+							"label": "build",
+							"value": "build: ",
+							"description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+						},
+						{
+							"label": "chore",
+							"value": "chore: ",
+							"description": "Other changes that don\"t modify src or test files"
+						},
+						{
+							"label": "revert",
+							"value": "revert: ",
+							"description": "Reverts a previous commit"
+						}
+					],
 					"description": "commitItems的选项配置"
 				}
 			}
 		},
 		"keybindings": [
-      {
-        "command": "jjxTools.openFile",
-        "key": "ctrl+alt+o",
-        "mac": "ctrl+cmd+o"
+			{
+				"command": "jjxTools.openFile",
+				"key": "ctrl+alt+o",
+				"mac": "ctrl+cmd+o"
 			},
 			{
-        "command": "jjxTools.easycommit",
-        "key": "ctrl+alt+m",
-        "mac": "ctrl+cmd+m"
-      }
-    ],
+				"command": "jjxTools.easycommit",
+				"key": "ctrl+alt+m",
+				"mac": "ctrl+cmd+m"
+			}
+		],
 		"menus": {
 			"editor/context": [
 				{
@@ -107,6 +121,10 @@
 			{
 				"command": "jjxTools.easycommit",
 				"title": "easy commit"
+			},
+			{
+				"command": "jjxTools.infjs",
+				"title": "infjs test"
 			}
 		],
 		"snippets": [
@@ -130,14 +148,21 @@
 		"compile": "tsc -p ./",
 		"lint": "eslint . --ext .ts,.tsx",
 		"watch": "tsc -watch -p ./",
-		"vscode:publish": "vsce publish"
+		"vscode:publish": "vsce publish",
+		"test": "npm run compile && node ./out/test/runTest.js"
 	},
 	"devDependencies": {
+		"@types/mocha": "^8.2.0",
 		"@types/node": "^12.12.0",
 		"@types/vscode": "^1.51.0",
 		"@typescript-eslint/eslint-plugin": "^3.0.2",
 		"@typescript-eslint/parser": "^3.0.2",
 		"eslint": "^7.1.0",
+		"lerna": "^3.22.1",
 		"typescript": "^4.0.2"
+	},
+	"dependencies": {
+		"mocha": "^8.2.1",
+		"vscode-test": "^1.5.0"
 	}
 }

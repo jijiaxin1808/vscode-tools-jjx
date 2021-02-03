@@ -14,9 +14,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "http://registry.npm.taobao.org"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jijiaxin1808/vscode-tools-jjx.git"

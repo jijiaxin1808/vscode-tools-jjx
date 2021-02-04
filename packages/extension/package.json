@@ -1,6 +1,6 @@
 {
   "name": "@jjxtools/extension",
-  "version": "0.0.0",
+  "version": "1.0.5",
   "description": "> TODO: description",
   "author": "潘神1808 <44405174+jijiaxin1808@users.noreply.github.com>",
   "publisher": "jijiaxin",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@jjxtools/easy-commit": "^1.0.0",
-    "@jjxtools/open-invscode": "^1.0.0",
+    "@jjxtools/open-invscode": "^1.0.5",
     "@jjxtools/utils": "^0.0.0"
   }
 }

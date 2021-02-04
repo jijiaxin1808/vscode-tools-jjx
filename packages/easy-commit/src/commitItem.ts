@@ -1,5 +1,6 @@
 import { commitItemType, commitType, pickType } from './type';
-import { getExtConfig } from './utils/index';
+import { getExtConfig } from '@jjxtools/utils';
+
 export const commitItems: commitType<commitItemType>[] = [
     {
         type: 'picker',

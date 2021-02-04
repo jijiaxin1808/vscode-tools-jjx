@@ -5,6 +5,7 @@
   "license": "MIT",
   "publisher": "jijiaxin",
   "dependencies": {
+    "@jjxtools/utils": "^0.0.0",
     "@types/vscode": "^1.52.0"
   }
 }

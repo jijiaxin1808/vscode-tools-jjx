@@ -14,12 +14,12 @@ this extenison was created to open file/fold in a new vscode instance
 
 ### demos
 #### openfile demo
-![avatar](./public/openfile.gif)
+![image](https://github.com/jijiaxin1808/vscode-tools-jjx/blob/main/packages/open-invscode/public/openfile.gif)
 <br>
 <br>
 
 #### openfolder demo
-![avatar](./public/openfolder.gif)
+![avatar](https://github.com/jijiaxin1808/vscode-tools-jjx/blob/main/packages/open-invscode/public/openfolder.gif)
 
-#### openfolder demo
-![avatar](./public/selectfolder.gif)
+#### selectfolder demo
+![avatar](https://github.com/jijiaxin1808/vscode-tools-jjx/blob/main/packages/open-invscode/public/selectfolder.gif)

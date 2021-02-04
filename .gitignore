@@ -2,3 +2,7 @@ out
 node_modules
 .vscode-test/
 *.vsix
+dist
+tsconfig.tsbuildinfo
+lerna-debug.log
+yarn-error.log

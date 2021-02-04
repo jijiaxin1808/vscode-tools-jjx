@@ -150,7 +150,7 @@
 		"watch": "webpack --mode production",
 		"vscode:publish": "vsce publish",
 		"test": "npm run compile && node ./out/test/runTest.js",
-		"build": "rm out -rf && webpack --mode development"
+		"build": "rm out -rf && webpack --mode production"
 	},
 	"devDependencies": {
 		"@types/mocha": "^8.2.0",
@@ -163,9 +163,7 @@
 		"ts-loader": "^8.0.14",
 		"typescript": "^4.0.2",
 		"webpack": "^5.20.1",
-		"webpack-cli": "^4.5.0"
-	},
-	"dependencies": {
+		"webpack-cli": "^4.5.0",
 		"mocha": "^8.2.1",
 		"vscode-test": "^1.5.0"
 	}

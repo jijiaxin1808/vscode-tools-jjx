@@ -147,10 +147,10 @@
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"lint": "eslint . --ext .ts,.tsx",
-		"watch": "webpack --mode development --watch",
+		"watch": "webpack --mode production",
 		"vscode:publish": "vsce publish",
 		"test": "npm run compile && node ./out/test/runTest.js",
-		"webpack": "webpack --mode development"
+		"build": "rm out -rf && webpack --mode development"
 	},
 	"devDependencies": {
 		"@types/mocha": "^8.2.0",

@@ -2,7 +2,7 @@
 	"name": "jjxtools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -153,8 +153,7 @@
 	},
 	"icon": "icon.ico",
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
+		"vscode:prepublish": "npm run build",
 		"lint": "eslint . --ext .ts,.tsx",
 		"watch": "webpack --mode production",
 		"vscode:publish": "vsce publish",

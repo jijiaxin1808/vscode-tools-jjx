@@ -19,5 +19,5 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 0,
         "@typescript-eslint/no-empty-function": 'off',
     },
-    ignorePatterns: ["out/*"]
+    ignorePatterns: ["dist/*"]
 };

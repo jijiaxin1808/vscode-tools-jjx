@@ -6,7 +6,7 @@
   "publisher": "jijiaxin",
   "homepage": "https://github.com/jijiaxin1808/vscode-tools-jjx#readme",
   "license": "ISC",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -27,6 +27,6 @@
   "dependencies": {
     "@jjxtools/easy-commit": "^1.0.0",
     "@jjxtools/open-invscode": "^1.0.0",
-    "@jjxtools/utils": "^0.0.0"
+    "@jjxtools/utils": "^1.0.2"
   }
 }

@@ -18,7 +18,7 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"main": "./out/extension.js",
+	"main": "./packages/extension/dist/index.js",
 	"contributes": {
 		"configuration": {
 			"title": "tools@jjx",
@@ -147,7 +147,7 @@
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"lint": "eslint . --ext .ts,.tsx",
-		"watch": "webpack --mode production",
+		"watch": "tsc -b",
 		"vscode:publish": "vsce publish",
 		"test": "npm run compile && node ./out/test/runTest.js",
 		"build": "rm out -rf && webpack --mode development"

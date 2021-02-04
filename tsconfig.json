@@ -1,15 +1,17 @@
 {
-	"compilerOptions": {
-		"module": "es6",
-		"target": "es2019",
-		"lib": ["ES2019"],
-		"outDir": "out",
-		"sourceMap": true,
-		"strict": true,
-		"noImplicitThis": false
-	},
-  "include": [
-    "packages/*/src"
-  ],
-	"exclude": ["node_modules", ".vscode-test"]
+  "files": [],
+	"references": [
+    {
+      "path": "./packages/utils/"
+    },
+    {
+      "path": "./packages/easy-commit/"
+    },
+    {
+      "path": "./packages/open-invscode/"
+    },
+    {
+      "path": "./packages/extension/"
+    }
+  ]
 }

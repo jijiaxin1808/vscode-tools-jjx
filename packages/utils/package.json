@@ -1,12 +1,13 @@
 {
   "name": "@jjxtools/utils",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "description": "> TODO: description",
   "author": "潘神1808 <44405174+jijiaxin1808@users.noreply.github.com>",
   "publisher": "jijiaxin",
   "homepage": "https://github.com/jijiaxin1808/vscode-tools-jjx#readme",
   "license": "ISC",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "type": "dist/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"

@@ -1,11 +1,11 @@
 {
   "name": "@jjxtools/easy-commit",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "type":"dist/index.d.ts",
   "license": "MIT",
   "publisher": "jijiaxin",
   "dependencies": {
-    "@jjxtools/utils": "^0.0.0",
-    "@types/vscode": "^1.52.0"
+    "@jjxtools/utils": "^1.0.2"
   }
 }

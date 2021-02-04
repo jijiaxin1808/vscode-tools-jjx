@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { debounce } from '@jjxtools/utils/src';
+import { debounce } from '@jjxtools/utils';
 import { openCurrtFIleWithvscode, openWithVscode } from '@jjxtools/open-invscode';
 import { easycommit } from '@jjxtools/easy-commit';
 // import { infjsTest } from './src/infjsTest';

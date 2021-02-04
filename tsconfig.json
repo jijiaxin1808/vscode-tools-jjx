@@ -6,7 +6,8 @@
 		"outDir": "out",
 		"sourceMap": true,
 		"strict": true,
-		"noImplicitThis": false
+		"noImplicitThis": false,
+		"moduleResolution": "node"
 	},
   "include": [
     "packages/*/src"

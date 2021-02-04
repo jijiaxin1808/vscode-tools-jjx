@@ -144,13 +144,12 @@
 	},
 	"icon": "icon.ico",
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
+		"vscode:prepublish": "npm run build",
 		"lint": "eslint . --ext .ts,.tsx",
 		"watch": "tsc -b",
 		"vscode:publish": "vsce publish",
-		"test": "npm run compile && node ./out/test/runTest.js",
-		"build": "rm out -rf && webpack --mode development"
+		"test": "npm run build && node ./out/test/runTest.js",
+		"build": "tsc -b"
 	},
 	"devDependencies": {
 		"@types/mocha": "^8.2.0",
@@ -160,10 +159,7 @@
 		"@typescript-eslint/parser": "^3.0.2",
 		"eslint": "^7.1.0",
 		"lerna": "^3.22.1",
-		"ts-loader": "^8.0.14",
-		"typescript": "^4.0.2",
-		"webpack": "^5.20.1",
-		"webpack-cli": "^4.5.0"
+		"typescript": "^4.0.2"
 	},
 	"dependencies": {
 		"mocha": "^8.2.1",

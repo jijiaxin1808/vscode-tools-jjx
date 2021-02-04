@@ -30,6 +30,10 @@ const config = {
                 ]
             }
         ]
-    }
+    },
+    mode: 'development',
+    optimization: {
+        usedExports: true,
+    },
 };
 module.exports = config;

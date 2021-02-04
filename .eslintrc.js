@@ -18,5 +18,6 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 0,
         '@typescript-eslint/no-non-null-assertion': 0,
         "@typescript-eslint/no-empty-function": 'off',
-    }
+    },
+    ignorePatterns: ["out/*"]
 };

@@ -13,8 +13,13 @@ this extenison was created to open file/fold in a new vscode instance
 |selectfolder | open folder where you selectd folder in folders picker | undefined |
 
 ### demos
-openfile demo
+#### openfile demo
 ![avatar](./public/openfile.gif)
+<br>
+<br>
 
+#### openfolder demo
+![avatar](./public/openfolder.gif)
 
-
+#### openfolder demo
+![avatar](./public/selectfolder.gif)

@@ -1,0 +1,3 @@
+[submodule "packages/infQuery"]
+	path = packages/infQuery
+	url = https://github.com/jijiaxin1808/Inquirerjs-for-vscode

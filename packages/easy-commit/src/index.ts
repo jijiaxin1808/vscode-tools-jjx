@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import  {   commitItemType, commitType, pickType, repoItemType } from './type';
 import { getCommitItems } from './commitItem';
 import { GitExtension, Repository } from './git';
-
+import { basename } from 'path';
 const commitItems = getCommitItems();
 
 function isPickType<T extends vscode.QuickPickItem>(commitItem: commitType<T>) : commitItem is pickType<T>{
@@ -84,9 +84,10 @@ async function creatSelectRepoItmes(repos: Repository[]): Promise<Repository> {
         ],
     };
     for(const repo of repos) {
+
         selectRepoItems.item.push({
             value: repo,
-            label: repo.rootUri.path
+            label: basename(repo.rootUri.path)
         });
     }
     const item = await createCommitInput(selectRepoItems) as repoItemType;

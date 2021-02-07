@@ -1,6 +1,6 @@
 {
   "name": "@jjxtools/extension",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "> TODO: description",
   "author": "潘神1808 <44405174+jijiaxin1808@users.noreply.github.com>",
   "publisher": "jijiaxin",
@@ -25,10 +25,10 @@
     "url": "https://github.com/jijiaxin1808/vscode-tools-jjx/issues"
   },
   "dependencies": {
-    "@jjxtools/easy-commit": "^1.0.0",
-    "@jjxtools/extensiontest": "^1.0.0",
-    "@jjxtools/npmconf": "^1.0.0",
-    "@jjxtools/open-invscode": "^1.0.6",
+    "@jjxtools/easy-commit": "^1.0.1",
+    "@jjxtools/extensiontest": "^1.0.1",
+    "@jjxtools/npmconf": "^1.0.1",
+    "@jjxtools/open-invscode": "^1.0.9",
     "@jjxtools/utils": "^0.0.0"
   }
 }

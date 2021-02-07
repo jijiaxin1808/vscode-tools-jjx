@@ -2,7 +2,7 @@
 	"name": "jjxtools",
 	"displayName": "@jjxTools",
 	"description": "tools just for @jjx",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"publisher": "jijiaxin",
 	"repository": "https://github.com/jijiaxin1808/vscode-tools-jjx",
 	"engines": {
@@ -134,6 +134,10 @@
 			{
 				"command": "jjxTools.testest",
 				"title": "extension test"
+			},
+			{
+				"command": "jjxTools.npmconf",
+				"title": "config npm registry"
 			}
 		],
 		"snippets": [

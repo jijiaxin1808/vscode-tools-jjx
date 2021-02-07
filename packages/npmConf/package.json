@@ -1,0 +1,18 @@
+{
+  "name": "@jjxtools/npmconf",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jijiaxin1808/vscode-tools-jjx.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/jijiaxin1808/vscode-tools-jjx/issues"
+  }
+}

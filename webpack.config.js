@@ -7,7 +7,7 @@ function scanPackage() {
     const packages = fs.readdirSync('packages').filter( path =>
         fs.statSync(`packages/${path}`).isDirectory()
     );
-    const conf = packages.map(path => ({
+    const conf = packages.filter(path => !path.startsWith('_')).map(path => ({
         entry: `./packages/${path}/src/index.ts`,
         path,
         filename:`${path}.js`,

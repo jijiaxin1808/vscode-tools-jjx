@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@jjxtools/easy-commit": "^1.0.0",
+    "@jjxtools/extensiontest": "^1.0.0",
     "@jjxtools/open-invscode": "^1.0.6",
     "@jjxtools/utils": "^0.0.0"
   }

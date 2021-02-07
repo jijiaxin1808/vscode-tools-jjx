@@ -132,8 +132,8 @@
 				"title": "easy commit"
 			},
 			{
-				"command": "jjxTools.infjs",
-				"title": "infjs test"
+				"command": "jjxTools.testest",
+				"title": "extension test"
 			}
 		],
 		"snippets": [
@@ -155,7 +155,7 @@
 	"scripts": {
 		"vscode:prepublish": "npm run build",
 		"lint": "eslint . --ext .ts,.tsx",
-		"watch": "webpack --mode production",
+		"watch": "webpack --mode development",
 		"vscode:publish": "vsce publish",
 		"test": "npm run compile && node ./out/test/runTest.js",
 		"build": "rm out -rf && webpack --mode production"

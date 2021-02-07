@@ -1,0 +1,12 @@
+{
+  "name": "@jjxtools/extensiontest",
+  "version": "1.0.0",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "infquery": "^0.0.1"
+  }
+}

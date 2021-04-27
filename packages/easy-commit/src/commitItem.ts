@@ -14,7 +14,7 @@ export const commitItems: commitType<commitItemType>[] = [
         nextLine: false,
         empty: true,
         placeholder: 'What is the scope of this change (e.g. component or file name): (press enter to skip)',
-        fomatter: (result) => `(${result})：`
+        fomatter: (result) => `(${result}): `
     },
     {
         type: 'input',
